@@ -1,69 +1,75 @@
-# React + TypeScript + Vite
+# Pokemon Go React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Pokemon Go application built with TypeScript, Redux Toolkit, and RTK Query for efficient state management and API data fetching.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have the following installed:
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) (v6 or later) or [Yarn](https://yarnpkg.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/your-username/pokemon-go-react.git](https://github.com/your-username/pokemon-go-react.git)
+   cd pokemon-go-react 
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. **Run the application**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application**
+   Open your browser and navigate to `http://localhost:5173` to access the application.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Project Structure
+
+src/
+  ├── features/            # Feature modules
+  │   └── Pokmen/          # Pokemon feature
+  │       ├── __tests__/   # Test files
+  │       ├── pokmenApi.ts # API slice
+  │       └── pokmenSlice.ts # Redux slice
+  ├── store.ts             # Redux store
+  └── App
+
+## Testing
+
+To run tests, use the following command:
+```bash
+npm run test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To run tests with coverage, use the following command:
+```bash
+npm run test:coverage
 ```
+
+To run tests with UI, use the following command:
+```bash
+npm run test:ui
+```
+
+To run tests with coverage, use the following command:
+```bash
+npm run test:coverage
+```
+
+To run tests with coverage, use the following command:
+```bash
+npm run test:coverage
+```
+
+    

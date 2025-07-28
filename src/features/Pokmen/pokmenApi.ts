@@ -17,8 +17,10 @@ export interface PokemonDetails {
   name: string
   height: number
   weight: number
+  stats: any
   sprites: {
     front_default: string
+    other: any
     // Add other sprites as needed
   }
   types: {

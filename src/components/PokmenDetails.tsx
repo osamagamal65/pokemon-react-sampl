@@ -1,5 +1,6 @@
+import { useGetPokemonDetailsQuery } from "../features/Pokmen/pokmenApi";
+
 const { useParams, Link } = require('react-router-dom');
-const { useGetPokemonDetailsQuery } = require('../features/Pokmen/pokmenApi');
 require('../index.css');
 
 const PokemonDetails = () => {
@@ -76,5 +77,4 @@ const PokemonDetails = () => {
   );
 };
 
-module.exports = PokemonDetails;
-module.exports.default = PokemonDetails;
+export default PokemonDetails;

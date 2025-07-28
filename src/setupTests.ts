@@ -1,8 +1,32 @@
 // src/setupTests.ts
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import { vi } from 'vitest';
 
-// Use dynamic import to work with verbatimModuleSyntax
-const util = require('util');
+// Extend Vitest's expect with jest-dom matchers
+expect.extend({
+  // Add any custom matchers here if needed
+});
 
-global.TextEncoder = util.TextEncoder;
-global.TextDecoder = util.TextDecoder;
+// Mock browser APIs if needed
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
+
+// Clean up after each test
+// This ensures that tests are isolated from each other
+afterEach(() => {
+  cleanup();
+  vi.clearAllMocks();
+});

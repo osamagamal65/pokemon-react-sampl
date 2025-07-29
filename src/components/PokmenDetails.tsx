@@ -1,7 +1,7 @@
+import { Link, useParams } from "react-router-dom";
 import { useGetPokemonDetailsQuery } from "../features/Pokmen/pokmenApi";
 
-const { useParams, Link } = require('react-router-dom');
-require('../index.css');
+import '../index.css';
 
 const PokemonDetails = () => {
   const { id } = useParams();

@@ -236,6 +236,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 }
 
 .stat-label {
@@ -245,11 +247,16 @@ body {
   color: #6c757d;
 }
 
+.stat-bar-container .stat-value {
+  margin-top: .2rem;
+  margin-left: 0px;
+}
 .stat-bar-container {
   flex: 1;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-flow: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
 .stat-bar {
@@ -257,13 +264,16 @@ body {
   background-color: var(--primary-color);
   border-radius: 4px;
   min-width: 30px;
+  margin-bottom: 0.5rem;
 }
 
 .stat-value {
   min-width: 30px;
   text-align: right;
   font-weight: 600;
+  display: inline-block;
   color: var(--primary-color);
+  margin-left: .5rem;
 }
 
 /* Responsive adjustments */

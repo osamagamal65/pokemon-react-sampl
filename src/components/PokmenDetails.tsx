@@ -48,16 +48,16 @@ const PokemonDetails = () => {
 
         <div className="pokemon-stats">
           <div className="stat">
-            <span className="stat-label">Height</span>
+            <span className="stat-label">Height:</span>
             <span className="stat-value">{(pokemon.height / 10).toFixed(1)} m</span>
           </div>
           <div className="stat">
-            <span className="stat-label">Weight</span>
+            <span className="stat-label">Weight:</span>
             <span className="stat-value">{(pokemon.weight / 10).toFixed(1)} kg</span>
           </div>
           {pokemon.stats.map((stat: any) => (
             <div key={stat.stat.name} className="stat-item">
-              <span className="stat-label">{stat.stat.name.replace('-', ' ')}</span>
+              <span className="stat-label">{stat.stat.name.replace('-', ' ')}:</span>
               <div className="stat-bar-container">
                 <div 
                   className="stat-bar" 
